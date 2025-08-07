@@ -1,0 +1,237 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFFFFF;
+    /* White background */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    background-color: #F8E1E1;
+    /* Light Pink background */
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #D19A8A;
+    /* Rose Gold border */
+}
+
+header h1 {
+    color: #D19A8A;
+    /* Rose Gold color for the title */
+    font-size: 2.5em;
+    /* Adjust font size as needed */
+}
+
+header p {
+    color: #EAB8D1;
+    /* Lavender color for the tagline */
+    font-size: 1.2em;
+    /* Adjust font size as needed */
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #FFFFFF;
+    /* White background */
+    padding: 10px 0;
+    text-align: center;
+    border-bottom: 1px solid #D19A8A;
+    /* Rose Gold border */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    /* Bold text for links */
+}
+
+/* Home Section Styles */
+.hero-banner {
+    background-color: #F8E1E1;
+    /* Light Pink background */
+    padding: 40px;
+    text-align: center;
+}
+
+.hero-banner h2 {
+    color: #D19A8A;
+    /* Rose Gold color */
+}
+
+/* Services Section Styles */
+#services {
+    display: flex;
+    /* Use flexbox */
+    flex-wrap: wrap;
+    /* Allow items to wrap */
+    justify-content: center;
+    /* Center items horizontally */
+    padding: 20px;
+    text-align: center;
+}
+
+.service {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+    width: 200px;
+    /* Adjust width as needed */
+    background-color: #FFFFFF;
+    /* White background for services */
+    transition: transform 0.2s;
+}
+
+.service:hover {
+    transform: scale(1.05);
+    /* Scale effect on hover */
+}
+
+.service h3 {
+    margin: 10px 0;
+}
+
+.service button {
+    background-color: #D19A8A;
+    /* Rose Gold button */
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    color: white;
+    /* White text for button */
+}
+
+.service button:hover {
+    background-color: #B76E6E;
+    /* Darker shade on hover */
+}
+
+/* Feedback Form Styles */
+#feedback {
+    padding: 20px;
+    background-color: #F8E1E1;
+    /* Light Pink background */
+    border-radius: 5px;
+    margin: 20px;
+}
+
+#feedbackForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#feedbackForm label {
+    margin: 10px 0 5px;
+}
+
+#feedbackForm input,
+#feedbackForm textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #F8E1E1;
+    /* Light Pink background */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Coupon Section Styles */
+.coupon-section {
+    padding: 20px;
+    background-color: #F8E1E1;
+    /* Light Pink background */
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.coupon-section input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.coupon-section button {
+    background-color: #D19A8A;
+    /* Rose Gold button */
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    /* White text for button */
+}
+
+.coupon-section button:hover {
+    background-color: #B76E6E;
+    /* Darker shade on hover */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service {
+        margin: 10px 0;
+        width: 90%;
+        /* Full width on mobile */
+    }
+
+    #feedback {
+        margin: 10px;
+        /* Reduce margin on mobile */
+    }
+
+    .coupon-section {
+        margin: 10px;
+        /* Reduce margin on mobile */
+    }
+
+    /* Gallery Images Styles */
+    .gallery-images {
+        display: flex;
+        /* Use flexbox for layout */
+        flex-wrap: wrap;
+        /* Allow items to wrap */
+        justify-content: center;
+        /* Center items horizontally */
+    }
+
+    .gallery-images img {
+        max-width: 100%;
+        /* Ensure images do not exceed their container */
+        height: auto;
+        /* Maintain aspect ratio */
+        margin: 10px;
+        /* Add some space between images */
+        border-radius: 5px;
+        /* Optional: Add rounded corners */
+    }
+
+}

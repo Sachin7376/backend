@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlamShine Beauty Parlour | Premium Beauty Services in [Your City]</title>
+    <meta name="description"
+        content="Professional beauty services including hair, skin, makeup and nails. Book your appointment online today!">
+    <meta name="keywords" content="beauty salon,hair salon,spa,[your city]">
+    <meta name="author" content="GlamShine Beauty">
+    <meta property="og:title" content="GlamShine Beauty Parlour">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.glamshinebeauty.com">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BeautySalon",
+      "name": "GlamShine Beauty Parlour",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Beauty Lane Varanasi",
+        "addressLocality": "Glam City"
+      },
+      "telephone": "+91-4567890747",
+      "openingHours": "Mo,Tu,We,Th,Fr,Sa 09:00-20:00"
+    }
+    </script>
+    <style>
+        /* Basic Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #f8f8f8;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        .hero-banner {
+            background-color: #e0e0e0;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .service {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .gallery-images img {
+            width: 100%;
+            height: auto;
+        }
+
+        .google-map iframe {
+            width: 100%;
+            height: 200px;
+        }
+
+        #appointmentForm {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        #appointmentForm label,
+        #appointmentForm input,
+        #appointmentForm select {
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        #confirmationMessage {
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f8f8;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .service {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>GlamShine Beauty Parlour</h1>
+        <p>'Redefining Beauty, Naturally.'</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#appointment">Book Appointment</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#blog">Beauty Blog</a></li>
+            <li><a href="#coupons">Coupons & Gift Cards</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Page -->
+    <section id="home">
+        <div class="hero-banner">
+            <h2>Welcome to GlamShine Beauty Parlour</h2>
+            <p>Your journey to beauty starts here.</p>
+        </div>
+        <div class="intro">
+            <h3>About Us</h3>
+            <p>At GlamShine, we believe in redefining beauty naturally.</p>
+        </div>
+        <div class="testimonials">
+            <h3>Testimonials</h3>
+            <p>"Best beauty services in town!" - Happy Customer</p>
+        </div>
+        <div class="instagram-feed">
+            <h3>Follow Us on Instagram</h3>
+            <p>Check out our latest work!</p>
+        </div>
+    </section>
+
+    <!-- About Us Page -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Background: GlamShine Beauty Parlour has been serving clients since 2020.</p>
+        <p>Mission: To provide high-quality beauty services with a personal touch.</p>
+        <p>Hygiene Promise: We adhere to the highest hygiene standards to ensure your safety.</p>
+    </section>
+
+    <!-- Services Page -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="service">
+            <i class="fas fa-cut"></i>
+            <h3>Hair</h3>
+            <p>Price: $50</p>
+            <button onclick="bookService('Hair')">Book Now</button>
+        </div>
+        <div class="service">
+            <i class="fas fa-spa"></i>
+            <h3>Skin</h3>
+            <p>Price: $40</p>
+            <button onclick="bookService('Skin')">Book Now</button>
+        </div>
+        <div class="service">
+            <i class="fas fa-magic"></i>
+            <h3>Makeup</h3>
+            <p>Price: $70</p>
+            <button onclick="bookService('Makeup')">Book Now</button>
+        </div>
+        <div class="service">
+            <i class="fas fa-paint-brush"></i>
+            <h3>Nails</h3>
+            <p>Price: $30</p>
+            <button onclick="bookService('Nails')">Book Now</button>
+        </div>
+    </section>
+
+    <!-- Gallery Page -->
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <h3>Before/After Photos</h3>
+        <div class="gallery-images">
+            <img src="https://t4.ftcdn.net/jpg/02/50/81/73/360_F_250817363_HuzNs82AljZMAkHUW3mRWSsNwz1DEIqM.jpg"
+                alt="Before Service">
+            <img src="https://t3.ftcdn.net/jpg/03/28/63/88/360_F_328638837_zk5JnvpC9hgPm3WgzvsnTmTNwRCp0Epp.jpg"
+                alt="After Service">
+        </div>
+        <h3>Videos</h3>
+        <div class="gallery-videos">
+            <iframe width="640" height="360" src="https://www.youtube.com/embed/5y1C75udSiU" frameborder="0"
+                allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- Pricing Page -->
+    <section id="pricing">
+        <h2>Pricing</h2>
+        <h3>Service List</h3>
+        <ul>
+            <li>Hair: $50</li>
+            <li>Skin: $40</li>
+            <li>Makeup: $70</li>
+            <li>Nails: $30</li>
+        </ul>
+        <h3>Bridal Packages</h3>
+        <p>Contact us for bridal package pricing.</p>
+        <h3>Seasonal Offers</h3>
+        <p>Check our website for seasonal discounts!</p>
+    </section>
+
+    <!-- Appointment Booking Page -->
+    <section id="appointment">
+        <h2>Book an Appointment</h2>
+        <form id="appointmentForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="service">Service:</label>
+            <select id="service" name="service" required>
+                <option value="">Select a service</option>
+                <option value="Hair">Hair ($50)</option>
+                <option value="Skin">Skin ($40)</option>
+                <option value="Makeup">Makeup ($70)</option>
+                <option value="Nails">Nails ($30)</option>
+            </select>
+
+            <label for="date">Appointment Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="time">Preferred Time:</label>
+            <input type="time" id="time" name="time" required>
+
+            <button type="button" id="submitBtn" onclick="submitAppointment()">Book Appointment</button>
+        </form>
+        <div id="confirmationMessage"></div>
+        <p>Confirmation will be sent via email/SMS.</p>
+    </section>
+
+    <!-- Contact Us Page -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <p><i class="fas fa-map-marker-alt"></i> 123 Beauty Lane, Glam City</p>
+            <p><i class="fas fa-phone"></i> (+91) 234-456-7890</p>
+            <div class="google-map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115408.22405537314!2d82.99110895!3d25.32076265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e2db76febcf4d%3A0x68131710853ff0b5!2sVaranasi%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1752918665049!5m2!1sen!2sin"
+                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+        <p>WhatsApp: +91 5634567890</p>
+        <form id="contactForm">
+            <label for="contactName">Your Name:</label>
+            <input type="text" id="contactName" name="contactName" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="contactPhone">Phone:</label>
+            <input type="tel" id="contactPhone" name="contactPhone" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" cols="50" required></textarea>
+
+            <button type="button" onclick="submitContact()">Send Message</button>
+        </form>
+        <div id="contactConfirmation"></div>
+    </section>
+
+    <!-- Feedback Form Section -->
+    <section id="feedback">
+        <h2>Feedback Form</h2>
+        <form id="feedbackForm">
+            <label for="feedbackName">Your Name:</label>
+            <input type="text" id="feedbackName" name="feedbackName" required>
+
+            <label for="feedbackEmail">Email:</label>
+            <input type="email" id="feedbackEmail" name="feedbackEmail" required>
+
+            <label for="feedbackMessage">Feedback:</label>
+            <textarea id="feedbackMessage" name="feedbackMessage" rows="4" cols="50" required></textarea>
+
+            <button type="button" onclick="submitFeedback()">Submit Feedback</button>
+        </form>
+        <div id="feedbackConfirmation"></div>
+    </section>
+
+    <!-- Testimonials Page -->
+    <section id="testimonials">
+        <h2>Testimonials</h2>
+        <h3>What Our Clients Say</h3>
+        <div class="testimonial">
+            <p>"GlamShine is the best! Highly recommend!" - Satisfied Customer</p>
+        </div>
+        <div class="testimonial">
+            <p>"Amazing services and friendly staff!" - Happy Client</p>
+        </div>
+        <h3>Google Reviews</h3>
+        <p>Check our Google reviews for more feedback!</p>
+    </section>
+
+    <!-- Beauty Blog Section -->
+    <section id="blog">
+        <h2>Beauty Blog & Tips</h2>
+        <article>
+            <h3>5 Skincare Tips for Glowing Skin</h3>
+            <p>Here are some tips to keep your skin healthy and glowing...</p>
+            <a href="blog-post.html">Read More</a>
+        </article>
+        <article>
+            <h3>Makeup Trends to Follow This Season</h3>
+            <p>Discover the latest makeup trends that will elevate your look...</p>
+            <a href="makeup-trends.html">Read More</a>
+        </article>
+    </section>
+
+    <!-- Coupons & Gift Cards Section -->
+    <section id="coupons">
+        <h2>Coupons & Gift Cards</h2>
+        <div class="coupon-section">
+            <h3>Apply Coupon Code</h3>
+            <input type="text" id="couponCode" placeholder="Enter your coupon code">
+            <button onclick="applyCoupon()">Apply</button>
+            <div id="couponMessage"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Contact us at: info@glamshinebeauty.com</p>
+        <p>Call us: <a href="tel:+919876543210">+91 98765 43210</a></p>
+        <p>WhatsApp: <a href="https://wa.me/919876543210" target="_blank">Chat with us</a></p>
+    </footer>
+
+    <script>
+        async function submitAppointment() {
+            const submitBtn = document.getElementById('submitBtn');
+            const form = document.getElementById('appointmentForm');
+
+            if (!form.name.value || !form.phone.value || !form.service.value || !form.date.value || !form.time.value) {
+                document.getElementById('confirmationMessage').innerHTML = "Please fill all the fields.";
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Booking...';
+
+            const formData = {
+                name: form.name.value,
+                phone: form.phone.value,
+                service: form.service.value,
+                date: form.date.value,
+                time: form.time.value
+            };
+
+            try {
+                const response = await fetch('/api/appointments', { // ✅ updated
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const result = await response.json();
+                document.getElementById('confirmationMessage').innerHTML =
+                    `Thank you ${result.data.name}! Your ${result.data.service} appointment is confirmed for ${result.data.date} at ${result.data.time}.`;
+                form.reset();
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('confirmationMessage').innerHTML =
+                    'Booking failed. Please try again later.';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Book Appointment';
+            }
+        }
+
+        function submitContact() {
+            const form = document.getElementById('contactForm');
+            if (!form.contactName.value || !form.email.value || !form.contactPhone.value || !form.message.value) {
+                document.getElementById('contactConfirmation').innerHTML = "Please fill all the fields.";
+                return;
+            }
+            document.getElementById('contactConfirmation').innerHTML =
+                "Thank you for your message! We'll respond within 24 hours.";
+            form.reset();
+        }
+
+        function submitFeedback() {
+            const form = document.getElementById('feedbackForm');
+            if (!form.feedbackName.value || !form.feedbackEmail.value || !form.feedbackMessage.value) {
+                document.getElementById('feedbackConfirmation').innerHTML = "Please fill all the fields.";
+                return;
+            }
+            document.getElementById('feedbackConfirmation').innerHTML =
+                "Thank you for your feedback! We'll respond within 24 hours.";
+            form.reset();
+        }
+
+        function bookService(serviceType) {
+            const serviceSelect = document.getElementById('service');
+            serviceSelect.value = serviceType;
+            document.getElementById('appointment').scrollIntoView();
+        }
+
+        function applyCoupon() {
+            var couponCode = document.getElementById("couponCode").value;
+            if (couponCode === "DISCOUNT10") {
+                document.getElementById("couponMessage").innerHTML = "Coupon applied! You get a 10% discount.";
+            } else {
+                document.getElementById("couponMessage").innerHTML = "Invalid coupon code.";
+            }
+        }
+    </script>
+</body>
+
+</html>
