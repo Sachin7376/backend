@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const url = process.env.MONGODB_URI || 'mongodb://localhost:27017/beauty_parlour';
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('✅ Connected to MongoDB'))
-    .catch(err => console.error('❌ Error connecting to MongoDB:', err));
+    .catch(err => console.error('❌ MongoDB error:', err));
 
 // ✅ Schema & Model
 const appointmentSchema = new mongoose.Schema({
@@ -29,7 +29,7 @@ const appointmentSchema = new mongoose.Schema({
 const Appointment = mongoose.model('Appointment', appointmentSchema);
 
 // ✅ Serve frontend
-const frontendPath = path.join(__dirname, '/');
+const frontendPath = __dirname; // This is correct based on your repo
 app.use(express.static(frontendPath));
 
 // ✅ API route
@@ -45,7 +45,7 @@ app.post('/api/appointments', (req, res) => {
         });
 });
 
-// ✅ Wildcard fallback route
+// ✅ Wildcard route for SPA support
 app.get('*', (req, res) => {
     res.sendFile(path.join(frontendPath, 'index.html'));
 });
