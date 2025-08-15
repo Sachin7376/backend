@@ -81,7 +81,7 @@
             height: 200px;
         }
 
-        #appointmentForm {
+        #appointmentForm, #contactForm, #feedbackForm {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -89,12 +89,16 @@
 
         #appointmentForm label,
         #appointmentForm input,
-        #appointmentForm select {
+        #appointmentForm select,
+        #contactForm label,
+        #contactForm input,
+        #feedbackForm label,
+        #feedbackForm input {
             width: 100%;
             margin: 10px 0;
         }
 
-        #confirmationMessage {
+        #confirmationMessage, #contactConfirmation, #feedbackConfirmation {
             text-align: center;
         }
 
@@ -376,7 +380,7 @@
             };
 
             try {
-                const response = await fetch('/api/appointments', { // ✅ updated
+                const response = await fetch('/api/appointments', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -402,26 +406,69 @@
             }
         }
 
-        function submitContact() {
+        async function submitContact() {
             const form = document.getElementById('contactForm');
             if (!form.contactName.value || !form.email.value || !form.contactPhone.value || !form.message.value) {
                 document.getElementById('contactConfirmation').innerHTML = "Please fill all the fields.";
                 return;
             }
-            document.getElementById('contactConfirmation').innerHTML =
-                "Thank you for your message! We'll respond within 24 hours.";
-            form.reset();
+
+            const contactData = {
+                name: form.contactName.value,
+                email: form.email.value,
+                phone: form.contactPhone.value,
+                message: form.message.value
+            };
+
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(contactData)
+                });
+
+                if (!response.ok) throw new Error('Network error');
+
+                const result = await response.json();
+                document.getElementById('contactConfirmation').innerHTML =
+                    `Thank you, ${result.data.name}. We have received your message.`;
+                form.reset();
+            } catch (err) {
+                document.getElementById('contactConfirmation').innerHTML =
+                    'Failed to send message. Please try again later.';
+            }
         }
 
-        function submitFeedback() {
+        async function submitFeedback() {
             const form = document.getElementById('feedbackForm');
             if (!form.feedbackName.value || !form.feedbackEmail.value || !form.feedbackMessage.value) {
                 document.getElementById('feedbackConfirmation').innerHTML = "Please fill all the fields.";
                 return;
             }
-            document.getElementById('feedbackConfirmation').innerHTML =
-                "Thank you for your feedback! We'll respond within 24 hours.";
-            form.reset();
+
+            const feedbackData = {
+                name: form.feedbackName.value,
+                email: form.feedbackEmail.value,
+                message: form.feedbackMessage.value
+            };
+
+            try {
+                const response = await fetch('/api/feedback', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(feedbackData)
+                });
+
+                if (!response.ok) throw new Error('Network error');
+
+                const result = await response.json();
+                document.getElementById('feedbackConfirmation').innerHTML =
+                    `Thanks ${result.data.name}, we appreciate your feedback!`;
+                form.reset();
+            } catch (err) {
+                document.getElementById('feedbackConfirmation').innerHTML =
+                    'Failed to submit feedback. Please try again later.';
+            }
         }
 
         function bookService(serviceType) {
